@@ -1,0 +1,39 @@
+% Variables
+\def\Betreuer{Hack Niklas}
+\def\DPThema{Unity Game Design und Development}
+
+% vl. Variablen für die Autoren 
+% \def\Hauptverantwortlicher{Lukas Schachinger}
+% \def\Zweitverantwortlicher{Martin Usta}
+
+\newcommand{\newglossaryentryfast}[3]{%
+    \newglossaryentry{#1}{%
+        name={#2},
+        description={#3},
+    }
+}
+
+\lstdefinelanguage{CSharp}
+{
+    language=[Sharp]C,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    morekeywords={var,get,set}
+}
+
+% Define a new page style 'customfooter' with the footer
+\fancypagestyle{customfooter}{
+  \fancyfoot[C]{HTBLuVA-Mödling \hfill \authorname \hfill Seite \thepage\ von \pageref{LastPage}}
+}
+
+% Command to set the author name for the footer
+\newcommand{\setauthorname}[1]{\def\authorname{#1}}
+
+% Default page style without the footer
+\pagestyle{empty}
+
+% Better Glossary entries, it will make a footnote + a glossary entry
+\newcommand{\bettergls}[2]{%
+  \gls{#1}\footnote[#2]{\glsentrydesc{#1}}%
+}

@@ -1,0 +1,99 @@
+\documentclass[german, 12pt, oneside, numbers=noenddot]{scrbook}
+\input{./includes/htl_definintions.tex}	
+
+\usepackage[onehalfspacing]{setspace}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{uarial} % Load uarial package for Arial font
+
+% C#
+\usepackage{listings}
+
+% Fußnotenpackage
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% to_donotes
+\usepackage{todonotes}
+
+% highlighting
+\usepackage{xcolor, soul}
+
+% maybe use german grammar package 
+
+% ende
+\input{includes/commands.tex}
+
+\usepackage{glossaries}
+\makenoidxglossaries
+\input{includes/glossaryEntries.tex}
+%\glsaddallunused % if glossar is acting up
+
+\usepackage[ natbib=true, style=numeric,sorting=none]{biblatex}
+\addbibresource{media/literatur.bib}
+
+%\setlength{\headheight}{23.5071pt}
+\setlength{\headheight}{23.7771pt}
+\addtolength{\topmargin}{-6.5071pt}
+
+% noindent
+\setlength\parindent{0pt}
+
+\begin{document}
+\setauthorname{}
+\pagestyle{customfooter}
+
+
+\pagenumbering{arabic}	
+		
+\input{./chapters/00/00_deckblatt.tex}
+\input{./chapters/00/00_ee.tex}
+\input{./chapters/00/00_dokumentation.tex}
+
+	
+\tableofcontents
+
+\input{./chapters/01/01_pflichtenheft.tex}
+\input{./chapters/01/01_abstract.tex}
+\input{./chapters/01/01_introduction.tex}
+
+\input{./chapters/02/02_umfeldanalyse.tex}
+
+
+\input{temp.tex}
+
+%\input{./chapters/14/14_unity.tex}
+%\input{./chapters/13/13_blender.tex}
+
+%\input{./chapters/11/11_spieleperformance.tex}
+%\input{./chapters/12/12_spieldesign.tex}
+%\input{./chapters/15/15_storyandtheme.tex}
+
+%\input{./chapters/03/03_UserInterface.tex}
+%\input{./chapters/04/PrototypEntwicklung.tex}
+
+%\input{./chapters/05/ScriptsDescription.tex}
+
+\input{./chapters/16/summary.tex}
+
+\newpage
+\appendix
+\setauthorname{}
+
+\newpage
+\printnoidxglossary[sort=standard]
+
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\addcontentsline{toc}{chapter}{Listings}
+\lstlistoflistings
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+
+\input{./chapters/99/99_Anhang.tex}
+\input{./chapters/99/99_Begleitprotokolle.tex}
+\input{./chapters/99/99_Betreuungsprotokolle.tex}
+
+\end{document}
